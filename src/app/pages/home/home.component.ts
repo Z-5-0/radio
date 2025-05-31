@@ -90,7 +90,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const nativeElement = this.otpRef.el.nativeElement as HTMLElement;
     this.inputOtpFields = nativeElement.querySelectorAll('input.p-inputotp-input');
     this.audioElement = this.audioRef.nativeElement;
-    console.log('audioRef.nativeElement:', this.audioRef.nativeElement);
   }
 
   start() {
@@ -182,9 +181,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.setInputOtpClasses(true);
 
     let logHistory = JSON.parse(localStorage.getItem('log') || '[]');
-    console.log('1: ', logHistory);
     logHistory.push(this.results);
-    console.log('2: ', logHistory);
     this.saveSettings('log', logHistory);
   }
 
