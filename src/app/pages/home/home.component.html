@@ -1,0 +1,63 @@
+<app-loading [loading]="isLoading"></app-loading>
+
+<div class="page">
+
+
+    <div class="container">
+        <div class="grid justify-content-between p-2 pt-4">
+            <p-button (click)="drawerIsVisible = true; selectedDrawer = drawerOptions[0]" icon="pi pi-arrow-right" />
+            <h1>Radio practice app</h1>
+            <p-button (click)="drawerIsVisible = true; selectedDrawer = drawerOptions[1]" icon="pi pi-arrow-left" />
+        </div>
+        <div>
+            <p-panel>
+                <div class="pb-5">
+                    <p-inputotp #otpRef [(ngModel)]="inputValues" [length]="10" [size]="'large'" [disabled]="!isPlaying"
+                        (onChange)="onInputChange($event)" />
+                </div>
+                <audio #audioRef preload="auto" [autoplay]="false"
+                    src="assets/audio/full/military_alphabet_over_radio.mp3">
+                </audio>
+                <div class="pb-3">
+                    <p-progressbar [value]="(currentSegmentIndex) * 10" />
+                </div>
+            </p-panel>
+        </div>
+        <div>
+            <p-fieldset legend="Segment delay: {{delay + ' ms'}}">
+                <div class="px-2">
+                    <div class="py-4">
+                        <p-slider [(ngModel)]="delay" [min]="100" [max]="1000" [step]="100" [disabled]="isPlaying"
+                            (onChange)="onDelayChange($event)" />
+                    </div>
+                    <div class="grid justify-content-between">
+                        <div>100 ms</div>
+                        <div>1000 ms</div>
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+        <div>
+            <p-fieldset legend="Volume: {{volume}}%">
+                <div class="px-2">
+                    <div class="py-4">
+                        <p-slider [(ngModel)]="volume" [min]="0" [max]="100" [step]="10"
+                            (onChange)="onVolumeChange($event)" />
+                    </div>
+                    <div class="grid justify-content-between">
+                        <div>0 %</div>
+                        <div>100 %</div>
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+        <div class="grid justify-content-between p-2">
+            <p-button label="Start" severity="success" size="large" [disabled]="isPlaying" (click)="start()" />
+            <p-button label="Stop" severity="danger" size="large" [disabled]="!isPlaying" (click)="reset()" />
+        </div>
+    </div>
+</div>
+
+
+<app-drawer [(isVisible)]="drawerIsVisible" [template]="selectedDrawer.template" [header]="selectedDrawer.header"
+    [position]="selectedDrawer.position"></app-drawer>

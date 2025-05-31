@@ -1,0 +1,28 @@
+<p-drawer [(visible)]="isVisible" [header]="header" [position]="position" blockScroll="true" (onShow)="onShow($event)"
+    (onHide)="onHide($event)">
+    <ng-container *ngIf="template === 'cheatsheet'">
+        <p-card *ngFor="let a of radioSounds" [header]="a.code" class="m-1">
+            <audio #audioRefTest preload="auto" controls (loadedmetadata)="onLoadedMetadataTest(a.id, a.start)"
+                (timeupdate)="onTimeUpdateTest(a.id, a.start, a.end)"
+                [src]="'assets/audio/full/military_alphabet_over_radio.mp3'"></audio>
+        </p-card>
+    </ng-container>
+
+    <ng-container *ngIf="template === 'log'">
+        @if (logs.length) {
+        <div style="height: 100%; display: grid;grid-template-rows: 1fr auto;">
+            <div style="overflow: auto;">
+                <p-card *ngFor="let logRow of logs" class="m-1">
+                    <p-metergroup [value]="logRow" />
+                </p-card>
+            </div>
+            <div class="grid justify-content-end mt-2">
+                <p-button label="Clear" severity="warn" size="large" (click)="clearLogs()" />
+            </div>
+        </div>
+        }
+        @else {
+        <p>Not any log yet</p>
+        }
+    </ng-container>
+</p-drawer>

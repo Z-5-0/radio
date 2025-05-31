@@ -1,0 +1,13 @@
+p-inputotp {
+    input {
+        &.success {
+            color: var(--dark-color) !important;
+            background-color: var(--success-color) !important;
+        }
+
+        &.error {
+            color: var(--dark-color) !important;
+            background-color: var(--error-color) !important;
+        }
+    }
+}
