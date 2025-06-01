@@ -3,7 +3,13 @@
 A simple Angular application designed to help practice radio communication by playing audio segments similar to the military alphabet.  
 Users can type what they hear, and the app provides feedback on their accuracy.
 
-![Screenshot of the app](./assets/image/app.png)
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Z-5-0/radio/main/public/assets/image/app.png" alt="Screenshot" style="height: 500px;">
+</p>
+
+<br>
 
 ## Features
 
@@ -16,13 +22,16 @@ Users can type what they hear, and the app provides feedback on their accuracy.
 - Adjustable playback volume
 - Responsive layout using PrimeNG components
 
+<br>
+
 ## Tech Stack
 
-- [Angular](https://angular.io/)
-- [PrimeNG](https://www.primefaces.org/primeng/) UI library
-- [TypeScript](https://www.typescriptlang.org/)
-- [SCSS](https://sass-lang.com/)
-- [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for saving logs
+- Angular
+- TypeScript
+- SCSS
+- PrimeNG
+
+<br>
 
 ## Installation & Running
 
@@ -33,8 +42,12 @@ npm install
 ng serve
 ```
 
+<br>
+
 ## TODO
 - Add multilanguage support
+
+<br>
 
 ## Licence
 MIT © Z-5-0
