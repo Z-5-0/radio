@@ -83,6 +83,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('log')) {
+      localStorage.setItem('log', JSON.stringify([]));
+    }
+
     this.getSettings();
   }
 
@@ -95,6 +99,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   start() {
     this.inputValues = '';
     this.pressedCharacters = Array.from({ length: 10 });
+    this.segmentsToPlay = [];
     this.results = [];
 
     this.setInputOtpClasses(false);
@@ -205,7 +210,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   saveSettings(name: string, data: any) {
-    localStorage.setItem(name, JSON.stringify(data.toString()));
+    localStorage.setItem(name, JSON.stringify(data));
   }
 
   loadLogHistory() {

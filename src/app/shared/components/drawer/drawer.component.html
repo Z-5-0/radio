@@ -12,7 +12,8 @@
         @if (logs.length) {
         <div style="height: 100%; display: grid;grid-template-rows: 1fr auto;">
             <div style="overflow: auto;">
-                <p-card *ngFor="let logRow of logs" class="m-1">
+                <p-card *ngFor="let logRow of logs | loopReverse; let index=index"
+                    [header]="'Attempt ' + (logs.length-index).toString()" class="m-1">
                     <p-metergroup [value]="logRow" />
                 </p-card>
             </div>

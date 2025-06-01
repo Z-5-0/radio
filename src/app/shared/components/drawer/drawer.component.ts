@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChildren } from '@angular/core';
+import { CommonModule, KeyValue } from '@angular/common';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { DrawerModule } from 'primeng/drawer';
 import { CardModule } from 'primeng/card';
 
@@ -7,10 +7,19 @@ import { radioSounds } from '../../constants/radiosound';
 import { MeterGroupModule, MeterItem } from 'primeng/metergroup';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
+import { LoopReversePipe } from '../../pipes/loop-reverse.pipe';
 
 @Component({
   selector: 'app-drawer',
-  imports: [CommonModule, ButtonModule, FormsModule, DrawerModule, CardModule, MeterGroupModule],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    FormsModule,
+    DrawerModule,
+    CardModule,
+    MeterGroupModule,
+    LoopReversePipe
+  ],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.scss'
 })
