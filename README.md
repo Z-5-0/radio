@@ -49,6 +49,7 @@ ng serve
 ## TODO
 - Add multilanguage support
 - Show correct characters
+- Change font-family
 
 <br>
 
