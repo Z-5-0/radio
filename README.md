@@ -3,6 +3,8 @@
 A simple Angular application designed to help practice radio communication by playing audio segments similar to the military alphabet.  
 Users can type what they hear, and the app provides feedback on their accuracy.
 
+[Radio APP](https://z-5-0.github.io/radio/)
+
 <br>
 
 <p align="center">
@@ -46,6 +48,7 @@ ng serve
 
 ## TODO
 - Add multilanguage support
+- Volume control bugfix
 
 <br>
 
