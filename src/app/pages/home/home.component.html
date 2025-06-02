@@ -26,11 +26,11 @@
             <p-fieldset legend="Segment delay: {{delay + ' ms'}}">
                 <div class="px-2">
                     <div class="py-4">
-                        <p-slider [(ngModel)]="delay" [min]="100" [max]="1000" [step]="100" [disabled]="isPlaying"
+                        <p-slider [(ngModel)]="delay" [min]="0" [max]="1000" [step]="100" [disabled]="isPlaying"
                             (onChange)="onDelayChange($event)" />
                     </div>
                     <div class="grid justify-content-between">
-                        <div>100 ms</div>
+                        <div>0 ms</div>
                         <div>1000 ms</div>
                     </div>
                 </div>

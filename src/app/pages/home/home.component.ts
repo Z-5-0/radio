@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   pressedCharacters: string[] = Array.from({ length: 10 });
 
-  delay: number = 500;
+  delay: number = 0;
   volume: number = 1;
 
   showCheatSheet: boolean = false;
