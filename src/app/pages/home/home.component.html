@@ -37,10 +37,10 @@
             </p-fieldset>
         </div>
         <div>
-            <p-fieldset legend="Volume: {{volume}}%">
+            <p-fieldset legend="Volume: {{volume * 100}}%">
                 <div class="px-2">
                     <div class="py-4">
-                        <p-slider [(ngModel)]="volume" [min]="0" [max]="100" [step]="10"
+                        <p-slider [(ngModel)]="volume" [min]="0" [max]="1" [step]=".1"
                             (onChange)="onVolumeChange($event)" />
                     </div>
                     <div class="grid justify-content-between">

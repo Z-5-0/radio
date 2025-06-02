@@ -126,6 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           tap(() => {
             this.currentSegmentIndex++;
             this.audioElement.currentTime = segment.start;
+            this.audioElement.volume = this.volume;
             this.audioElement.play();
           }),
           concatMap(() => timer((segment.end - segment.start) * 1000)), // megvárjuk, amíg lejátszódik a szegmens
@@ -161,9 +162,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onVolumeChange(event: any) {
-    const volume = event.value / 100;
+    const volume = event.value;
     this.audioRef.nativeElement.volume = volume;
-    this.saveSettings('volume', `${volume * 100}`); // másolásra volt szükség
+    this.saveSettings('volume', `${volume}`); // másolásra volt szükség
   }
 
   getResults() {
