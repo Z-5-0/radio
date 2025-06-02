@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   pressedCharacters: string[] = Array.from({ length: 10 });
 
   delay: number = 500;
-  volume: number = 100;
+  volume: number = 1;
 
   showCheatSheet: boolean = false;
   showResults: boolean = false;
@@ -104,7 +104,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.setInputOtpClasses(false);
 
-    this.otpRef.el.nativeElement.querySelector('input').focus();
+    setTimeout(() => {
+      this.otpRef.el.nativeElement.querySelector('input').focus();
+    }, 0)
 
     this.generateRandomSegments();
     this.playSegments();
