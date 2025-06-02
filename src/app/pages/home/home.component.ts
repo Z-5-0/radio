@@ -1,10 +1,10 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { InputOtp, InputOtpModule } from 'primeng/inputotp';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { RadioSound } from '../../models/radio-sound';
 import { CommonModule } from '@angular/common';
-import { concatMap, from, interval, of, Subject, Subscription, takeWhile, tap, timer } from 'rxjs';
+import { concatMap, from, of, Subject, Subscription, tap, timer } from 'rxjs';
 import { SliderModule } from 'primeng/slider';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';

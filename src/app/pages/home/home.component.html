@@ -1,18 +1,17 @@
 <app-loading [loading]="isLoading"></app-loading>
 
-<div class="page">
-
-
+<div class="page px-3">
     <div class="container">
-        <div class="grid justify-content-between p-2 pt-4">
+        <div class="flex align-items-center justify-content-between text-2xl font-bold p-2 pt-4">
             <p-button (click)="drawerIsVisible = true; selectedDrawer = drawerOptions[0]" icon="pi pi-arrow-right" />
-            <h1>Radio practice app</h1>
+            <div>Radio</div>
             <p-button (click)="drawerIsVisible = true; selectedDrawer = drawerOptions[1]" icon="pi pi-arrow-left" />
         </div>
         <div>
             <p-panel>
                 <div class="pb-5">
-                    <p-inputotp #otpRef [(ngModel)]="inputValues" [length]="10" [size]="'large'" [disabled]="!isPlaying"
+                    <p-inputotp #otpRef [(ngModel)]="inputValues" [length]="10"
+                        [size]="'large'" [disabled]="!isPlaying"
                         (onChange)="onInputChange($event)" />
                 </div>
                 <audio #audioRef preload="auto" [autoplay]="false"
@@ -57,7 +56,6 @@
         </div>
     </div>
 </div>
-
 
 <app-drawer [(isVisible)]="drawerIsVisible" [template]="selectedDrawer.template" [header]="selectedDrawer.header"
     [position]="selectedDrawer.position"></app-drawer>

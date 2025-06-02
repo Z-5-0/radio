@@ -1,5 +1,9 @@
+@use 'mixin';
+
 p-inputotp {
     input {
+        flex: 0 1 auto !important;
+
         &.success {
             color: var(--dark-color) !important;
             background-color: var(--success-color) !important;
@@ -9,5 +13,15 @@ p-inputotp {
             color: var(--dark-color) !important;
             background-color: var(--error-color) !important;
         }
+    }
+
+    @include mixin.breakpoint(xs) {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+
+    @include mixin.breakpoint(md) {
+        display: flex !important;
+        grid-template-columns: unset !important;
     }
 }
