@@ -48,7 +48,7 @@ ng serve
 
 ## TODO
 - Add multilanguage support
-- Volume control bugfix
+- Show correct characters
 
 <br>
 
