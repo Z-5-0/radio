@@ -54,4 +54,4 @@ ng serve
 <br>
 
 ## Licence
-MIT © Z-5-0
+This project is licensed under the [MIT License](./LICENSE).
